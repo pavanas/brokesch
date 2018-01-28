@@ -149,7 +149,7 @@ export default {
     updateRaces: function(event) {
       console.log();
       let elem = document.querySelector('.races-content');
-      //elem.firstChild.remove();
+      elem.firstChild.remove();
     }
   }
 };
