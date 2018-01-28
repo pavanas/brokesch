@@ -54,9 +54,24 @@ func App() *buffalo.App {
 		}
 		app.Use(T.Middleware())
 
-		app.GET("/", HomeHandler)
-
 		app.ServeFiles("/assets", assetsBox)
+
+		// Create api endpoint
+		api := app.Group("/api")
+
+		api.Resource("/races", RacesResource{});
+
+		meeting := api.Resource("/meetings", MeetingsResource{})
+		meeting.Resource("/races", RacesResource{})
+
+		app.GET("/{path:.+}", HomeHandler)
+		app.GET("/", HomeHandler)
+		
+		//app.Resource("/meetings", MeetingsResource{})
+		//app.Resource("/competitors", CompetitorsResource{})
+
+		//app.Resource("/races", RacesResource{})
+		//app.Resource("/race_competitors", RaceCompetitorsResource{})
 	}
 
 	return app

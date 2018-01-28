@@ -1,0 +1,6 @@
+create_table("races", func(t) {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("number", "integer", {})
+	t.Column("starts_at", "timestamp", {})
+	t.Column("meeting_id", "uuid", {})
+})

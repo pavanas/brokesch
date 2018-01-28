@@ -17,6 +17,12 @@ module.exports = {
     filename: "[name].[hash].js",
     path: `${__dirname}/public/assets`
   },
+  resolve: {
+    alias: {
+      vue$: `${__dirname}/node_modules/vue/dist/vue.esm.js`,
+      router$: `${__dirname}/node_modules/vue-router/dist/vue-router.esm.js`
+    }
+  },
   plugins: [
     new CleanWebpackPlugin([
       "public/assets"
@@ -59,7 +65,8 @@ module.exports = {
           use: [{
             loader: "css-loader",
             options: {
-              sourceMap: true
+              sourceMap: true,
+              url: false
             }
           },
             {
@@ -70,6 +77,10 @@ module.exports = {
             }
           ]
         })
+      },
+      {
+        test: /\.vue/,
+        loader: "vue-loader"
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,

@@ -1,0 +1,1 @@
+add_column("competitors", "race_id", "uuid", {})
