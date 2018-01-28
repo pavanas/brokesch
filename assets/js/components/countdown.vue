@@ -54,7 +54,6 @@ export default {
         interval = setInterval(() => {
             let tt = new Date();
             tt.setHours(tt.getHours() + 10);
-            // this.now = Math.trunc((new Date()).getTime() / 1000)
             this.now = Math.trunc((tt).getTime() / 1000)
         }, 1000)
     },
@@ -86,6 +85,16 @@ export default {
               clearInterval(interval);
               this.$emit('countend');
           }
+      },
+      deadline: function() {
+        this.date = Math.trunc(Date.parse(this.deadline) / 1000)
+
+        interval = setInterval(() => {
+            let tt = new Date();
+            tt.setHours(tt.getHours() + 10);
+            this.now = Math.trunc((tt).getTime() / 1000)
+        }, 1000)
+
       }
 
 }

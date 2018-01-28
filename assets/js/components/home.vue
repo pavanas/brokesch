@@ -139,6 +139,7 @@ export default {
       if(is_active) {
         let req = $.getJSON(`api/meetings/${meeting_id}/races`);
         req.done(data => {
+          this.races = [];
           console.log(data);
           this.races = data;
         });
@@ -147,7 +148,7 @@ export default {
       }
     },
     updateRaces: function(event) {
-      console.log();
+      
       let elem = document.querySelector('.races-content');
       elem.firstChild.remove();
     }
