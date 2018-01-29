@@ -47,7 +47,7 @@
 		  <div class="container">
 		    <div class="content has-text-centered">
 		      <p>
-		        <strong>Find the project code in</strong> <a href="https://github.com/pavanas"><i class="fa fa-github"></i></a>
+		        <strong>Find the project code in</strong> <a href="https://github.com/pavanas/brokesch"><i class="fa fa-github"></i></a>
 		      </p>
 		      <strong>Coded by @pavanas</strong>
 		    </div>

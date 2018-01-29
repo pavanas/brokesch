@@ -1,6 +1,5 @@
 <template>
 <ul class="vue-countdown">
-  <input type="hidden" name="" :value="deadline" />
     <li>
         <p class="digit">{{ days | twoDigits }}</p>
         <p class="text">days</p>
@@ -33,10 +32,10 @@ Vue.filter('twoDigits', (value) => {
     return value.toString()
 })
 
-let interval = null;
+let interval = [];
 
 export default {
-    props: ['deadline'],
+    props: ['deadline', 'index'],
 
     data() {
         let d_end = new Date();
@@ -51,7 +50,7 @@ export default {
         
         this.date = Math.trunc(Date.parse(this.deadline) / 1000)
 
-        interval = setInterval(() => {
+        interval[this.index] = setInterval(() => {
             let tt = new Date();
             tt.setHours(tt.getHours() + 10);
             this.now = Math.trunc((tt).getTime() / 1000)
@@ -78,18 +77,19 @@ export default {
 
     watch: {
       now: function(value){
+        //console.log("hhh");
           this.diff = this.date - this.now;
           if(this.diff <= 0 || this.stop){
-              this.diff = 0;
+              //this.diff = 0;
               // Remove interval
-              clearInterval(interval);
+              clearInterval(interval[this.index]);
               this.$emit('countend');
           }
       },
       deadline: function() {
         this.date = Math.trunc(Date.parse(this.deadline) / 1000)
 
-        interval = setInterval(() => {
+        interval[this.index] = setInterval(() => {
             let tt = new Date();
             tt.setHours(tt.getHours() + 10);
             this.now = Math.trunc((tt).getTime() / 1000)

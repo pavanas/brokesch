@@ -194,6 +194,11 @@ figure.active {
 	background-color: seagreen;
 }
 
+.races-content {
+	max-height: 87vh;
+	overflow-y: hidden;
+}
+
 .is-competitor {
 	background-color: dodgerblue;
 	border: 1px solid dodgerblue;
