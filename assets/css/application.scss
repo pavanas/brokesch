@@ -3,7 +3,7 @@ body {
 }
 
 .hero-body {
-	background-image: url('http://localhost:3000/assets/images/racing.jpeg');
+	background-image: url('http://desolate-lake-56727.herokuapp.com/assets/images/racing.jpeg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -93,17 +93,17 @@ figure.active {
 } 
 
 .level.is-thoroughbred {
-	background-image: url('http://localhost:3000/assets/images/thoroughbred.png');
+	background-image: url('https://desolate-lake-56727.herokuapp.com/assets/images/thoroughbred.png');
 	background-position: -8% 7%;
 }
 
 .level.is-harness {
-	background-image: url('http://localhost:3000/assets/images/harness.png');
+	background-image: url('https://desolate-lake-56727.herokuapp.com/assets/images/harness.png');
 	background-position: -1% 26%;
 }
 
 .level.is-greyhounds {
-	background-image: url('http://localhost:3000/assets/images/greyhounds.png');
+	background-image: url('https://desolate-lake-56727.herokuapp.com/assets/images/greyhounds.png');
 	background-position: -4% 24%;
 }
 
@@ -202,7 +202,7 @@ figure.active {
 .is-competitor {
 	background-color: dodgerblue;
 	border: 1px solid dodgerblue;
-	background-image: url('http://localhost:3000/assets/images/rider.png');
+	background-image: url('https://desolate-lake-56727.herokuapp.com/assets/images/rider.png');
 	background-position: 0% 10%;
 	background-size: 25%;
 	text-align: center;

@@ -24,7 +24,7 @@
             <div class="card">
               <div class="card-image has-text-centered">
                 <figure v-on:click="showMeetingRaces" class="image" :class="['is-'+meeting.type]" :id="[meeting.id]">
-                  <img :src="['http://localhost:3000/assets/images/'+ meeting.type +'.png']" />
+                  <img :src="['https://desolate-lake-56727.herokuapp.com/assets/images/'+ meeting.type +'.png']" />
                 </figure>
               </div>
               <div class="card-content has-text-centered">
