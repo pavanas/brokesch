@@ -17,9 +17,9 @@
 		    <div class="tile is-4 is-parent raceinfo">
 		      <article class="tile is-child">
 		        <p class="title">Race info</p>
-		        <p>Race number: #{{ race[0].number }}</p>
-		        <p>Category: {{ race[0].m_type }}</p>
-		        <p>Closing in: <countdown :deadline="[race[0].ends_at]">1h:22m:33s</countdown></p>
+		        <p>Race number: #{{ race_info.number }}</p>
+		        <p>Category: {{ race_info.m_type }}</p>
+		        <p>Closing in: <countdown :deadline="[race_info.ends_at]"></countdown></p>
 		      </article>
 		    </div>
 		    <div class="tile is-6 is-parent">
@@ -60,7 +60,8 @@
 export default {
   data() {
     return {
-      race: []
+      race: [],
+      race_info: []
     };
   },
   created() {
@@ -74,8 +75,9 @@ export default {
       const id = this.$route.params.id;
       let req = $.getJSON(`/api/races/${id}`);
       req.done(data => {
-      	console.log(data);
+      	console.log("Data:" + data[0]);
         this.race = data;
+        this.race_info = data[0];
       });
     }
   }
